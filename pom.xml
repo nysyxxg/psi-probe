@@ -11,7 +11,7 @@
     PURPOSE.
 
 -->
-<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.psi-probe</groupId>
@@ -664,6 +664,15 @@
                 <artifactId>jna-platform</artifactId>
                 <version>${jna.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/versions-maven-plugin -->
+            <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -785,6 +794,7 @@
                             <manifestEntries>
                                 <Build-Time>${maven.build.timestamp}</Build-Time>
                                 <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <Git-Revision>${git.commit.id}</Git-Revision>
                                 <Os-Name>${os.name}</Os-Name>
                                 <Os-Arch>${os.arch}</Os-Arch>
@@ -945,6 +955,7 @@
                             <manifestEntries>
                                 <Build-Time>${maven.build.timestamp}</Build-Time>
                                 <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <Git-Revision>${git.commit.id}</Git-Revision>
                                 <Os-Name>${os.name}</Os-Name>
                                 <Os-Arch>${os.arch}</Os-Arch>
@@ -969,6 +980,7 @@
                             <manifestEntries>
                                 <Build-Time>${maven.build.timestamp}</Build-Time>
                                 <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <Git-Revision>${git.commit.id}</Git-Revision>
                                 <Os-Name>${os.name}</Os-Name>
                                 <Os-Arch>${os.arch}</Os-Arch>
@@ -993,6 +1005,7 @@
                             <manifestEntries>
                                 <Build-Time>${maven.build.timestamp}</Build-Time>
                                 <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <Git-Revision>${git.commit.id}</Git-Revision>
                                 <Os-Name>${os.name}</Os-Name>
                                 <Os-Arch>${os.arch}</Os-Arch>
@@ -1012,6 +1025,7 @@
                             <manifestEntries>
                                 <Build-Time>${maven.build.timestamp}</Build-Time>
                                 <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <Git-Revision>${git.commit.id}</Git-Revision>
                                 <Os-Name>${os.name}</Os-Name>
                                 <Os-Arch>${os.arch}</Os-Arch>
@@ -1090,6 +1104,7 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${license.plugin}</version>
                     <configuration>
+                        <!--suppress UnresolvedMavenProperty -->
                         <header>${main.basedir}/LICENSE_HEADER</header>
                         <excludes>
                             <exclude>**/*.jks</exclude>
@@ -1235,10 +1250,10 @@
 
     <reporting>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jdeps-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jdeps-plugin</artifactId>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -1247,14 +1262,15 @@
                     <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>versions-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jxr-plugin</artifactId>-->
+                <!--<version>3.0.0</version>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -1385,6 +1401,7 @@
                         <groupId>net.revelc.code.formatter</groupId>
                         <artifactId>formatter-maven-plugin</artifactId>
                         <configuration>
+                            <!--suppress UnresolvedMavenProperty -->
                             <configFile>${main.basedir}/eclipse-java-google-style.xml</configFile>
                         </configuration>
                         <executions>
